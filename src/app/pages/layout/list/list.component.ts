@@ -52,9 +52,9 @@ export class ListComponent implements OnInit
 {
 
 
-
-  game_data: GameDataPojo;
-  fruits = fruits;
+results: any[];
+  //game_data: Observable<GameDataPojo[]>;
+  //fruits = fruits;
   current_score = current_score;
   maximum_score=maximum_score;
 totalAngularPackages;
@@ -75,10 +75,11 @@ totalAngularPackages;
 
 ngOnInit() {
         // Simple GET request with response type <any>
-        this.http.get<SearchResults>('http://localhost:8000/').subscribe(data => {
+        this.http.get<any[]>('http://139.180.142.217:8000/').subscribe(data => {
     //this.totalAngularPackages = data.total;
-    this.game_data = data.results;
-    console.log(data.results);
+
+    this.results = data['results'];
+    console.log(this.results[0].id);
 })
     }
 

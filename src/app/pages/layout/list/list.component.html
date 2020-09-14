@@ -14,12 +14,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let fruit of game_data; let i=index">
+        <tr *ngFor="let data of results; let i=index">
 
 
-                    <td>{{ fruit.player_name }}</td>
-                    <td>{{ fruit.current_score }}</td>
-                          <td>{{ fruit.high_score }}</td>
+                    <td>{{ data.player_name }}</td>
+                    <td>{{ data.current_score }}</td>
+                          <td>{{ data.high_score }}</td>
           <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Block</button>
               <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Delete</button>
           </td>
