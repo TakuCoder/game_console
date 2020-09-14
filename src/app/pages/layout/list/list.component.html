@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Player List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+                    <th>Current Score</th>
+          <th>Maximum Score</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fruit of game_data; let i=index">
+
+
+                    <td>{{ fruit.player_name }}</td>
+                    <td>{{ fruit.current_score }}</td>
+                          <td>{{ fruit.high_score }}</td>
+          <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Block</button>
+              <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
