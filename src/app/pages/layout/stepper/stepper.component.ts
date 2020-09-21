@@ -22,7 +22,7 @@ results: any[];
      //this.totalAngularPackages = data.total;
 
      this.results = data['results'];
-     console.log(this.results[0].block_flag);
+ 
  //console.log(sss)
  })
      }
