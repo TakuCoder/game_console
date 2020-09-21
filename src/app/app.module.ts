@@ -10,6 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import {
   NbChatModule,
@@ -28,6 +34,16 @@ import {
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+
+
+       MatFormFieldModule,
+       MatInputModule,
+MatProgressSpinnerModule,
+       MatTableModule,
+       MatPaginatorModule,
+       MatSortModule,
+
+
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

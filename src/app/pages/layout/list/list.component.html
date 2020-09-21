@@ -7,8 +7,7 @@
       <thead>
         <tr>
           <th>Player Name</th>
-                    <th>Current Score</th>
-          <th>Maximum Score</th>
+
 
           <th>Actions</th>
         </tr>
@@ -17,11 +16,10 @@
         <tr *ngFor="let data of results; let i=index">
 
 
-                    <td>{{ data.player_name }}</td>
-                    <td>{{ data.current_score }}</td>
-                          <td>{{ data.high_score }}</td>
-          <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Block</button>
-              <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Delete</button>
+                    <td>{{ data.name }}</td>
+
+          <td><button (click)="blockUser(data.name,data.block_flag)" class="btn btn-danger">{{getButtonText(data.block_flag)}}</button>
+              <button (click)="deleteUser(data.name,data.block_flag)" class="btn btn-info" style="margin-left: 10px">Delete</button>
           </td>
         </tr>
       </tbody>

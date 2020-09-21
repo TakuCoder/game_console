@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component ,OnInit} from '@angular/core';
+import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-stepper',
@@ -8,36 +9,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class StepperComponent implements OnInit {
 
-  firstForm: FormGroup;
-  secondForm: FormGroup;
-  thirdForm: FormGroup;
+   searchString: string;
+results: any[];
 
-  constructor(private fb: FormBuilder) {
-  }
+ constructor(private http: HttpClient) { }
 
-  ngOnInit() {
-    this.firstForm = this.fb.group({
-      firstCtrl: ['', Validators.required],
-    });
+ ngOnInit()
+ {
+         // Simple GET request with response type <any>
+       //  this.http.get<any[]>('http://139.180.142.217:8000/').subscribe(data => {
+       this.http.get<any[]>('http://127.0.0.1:8000/get_score').subscribe(data => {
+     //this.totalAngularPackages = data.total;
 
-    this.secondForm = this.fb.group({
-      secondCtrl: ['', Validators.required],
-    });
+     this.results = data['results'];
+     console.log(this.results[0].block_flag);
+ //console.log(sss)
+ })
+     }
 
-    this.thirdForm = this.fb.group({
-      thirdCtrl: ['', Validators.required],
-    });
-  }
 
-  onFirstSubmit() {
-    this.firstForm.markAsDirty();
-  }
-
-  onSecondSubmit() {
-    this.secondForm.markAsDirty();
-  }
-
-  onThirdSubmit() {
-    this.thirdForm.markAsDirty();
-  }
 }

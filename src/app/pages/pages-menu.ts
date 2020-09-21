@@ -20,14 +20,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Game Data',
     icon: 'layout-outline',
     children: [
-      // {
-      //   title: 'Stepper',
-      //   link: '/pages/layout/stepper',
-      // },
+      
       {
-        title: 'Game Player List',
+        title: 'Player List',
         link: '/pages/layout/list',
       },
+      {
+        title: 'Player Score',
+        link: '/pages/layout/stepper',
+      }
+      // {
+      //   title: 'Game Score List',
+      //   link: '/pages/layout/ScoreDataList',
+      // },
       // {
       //   title: 'Infinite List',
       //   link: '/pages/layout/infinite-list',

@@ -21,7 +21,7 @@ const routes: Routes = [{
     {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
+        .then(m => m.LayoutModule),//layout
     },
     {
       path: 'forms',

@@ -20,6 +20,10 @@ const routes: Routes = [{
       path: 'list',
       component: ListComponent,
     },
+    // {
+    //   path: 'ScoreDataList',
+    //   component: ScoreComponent,
+    // },
     {
       path: 'infinite-list',
       component: InfiniteListComponent,
